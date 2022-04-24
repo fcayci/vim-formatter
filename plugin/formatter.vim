@@ -1,14 +1,14 @@
-" formatter.vim - Format your code using clang-format
+" vim-formatter.vim - Format your code using clang-format
 " Tried to convert vim-commentary from TPope. so have no idea about most of
 " the vim-foo
 " Maintainer:   Furkan Cayci <https://furkan.space/>
 " Version:      0.1
-" GetLatestVimScripts: 3695 1 :AutoInstall: formatter.vim
+" GetLatestVimScripts: 3695 1 :AutoInstall: vim-formatter.vim
 
-if exists("g:loaded_formatter") || v:version < 703
+if exists("g:loaded_vim_formatter") || v:version < 703
   finish
 endif
-let g:loaded_formatter = 1
+let g:loaded_vim_formatter = 1
 
 function! s:go(...) abort
   if !a:0
