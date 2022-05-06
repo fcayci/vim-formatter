@@ -1,9 +1,8 @@
 " vim-formatter.vim - Format your code using clang-format
-" Tried to convert vim-commentary from TPope. so have no idea about most of
-" the vim-foo
+" Based on vim-commentary by TPope
+"
 " Maintainer:   Furkan Cayci <https://furkan.space/>
-" Version:      0.1
-" GetLatestVimScripts: 3695 1 :AutoInstall: vim-formatter.vim
+" Version:      0.2
 
 if exists("g:loaded_vim_formatter") || v:version < 703
   finish
@@ -20,7 +19,7 @@ function! s:go(...) abort
     let [lnum1, lnum2] = [line("'["), line("']")]
   endif
 
-  execute "silent :!clang-format -i --lines=" . lnum1 . ":" . lnum2 . " " . bufname("%") | redraw!
+  execute ":" . lnum1 . "," . lnum2 . "!clang-format"
 endfunction
 
 command! -range -bar -bang Formatter call s:go(<line1>,<line2>,<bang>0)
